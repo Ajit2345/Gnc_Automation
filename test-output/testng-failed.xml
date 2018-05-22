@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="simpleTest(failed)">
+    <classes>
+      <class name="com.ajit.testScripts.registration.RegistrationTest">
+        <methods>
+          <include name="registrationTest" invocation-numbers="1 2"/>
+          <include name="beforeClass"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- com.ajit.testScripts.registration.RegistrationTest -->
+    </classes>
+  </test> <!-- simpleTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
