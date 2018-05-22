@@ -10,6 +10,7 @@ import com.ajit.helper.logger.LoggerHelper;
 import com.ajit.helper.waitHelper.WaitHelper;
 import com.ajit.pageObject.login.Login;
 import com.ajit.pageObject.register.Registration;
+import com.ajit.pageObject.storesLocator.StoreLocator;
 import com.ajit.testBase.DataSource;
 
 public class Home {
@@ -17,9 +18,11 @@ public class Home {
 	Login loginpage;
 	WaitHelper waitHelper;
 	private static Logger log = LoggerHelper.getLogger(Home.class);
-	//.//*[@id='wrapper']/div[2]/ul/li[1]/div/a/span
+	
 	@FindBy(xpath=".//*[@id='wrapper']/div[2]/ul/li[1]/div/a/span")
 	WebElement myAccount;
+	@FindBy(xpath=".//*[@id='wrapper']/div[2]/ul/li[2]/a/span")
+	WebElement storesLocator;
 	@FindBy(xpath=".//*[@id='wrapper']/div[2]/ul/li[1]/div/div/div/div/a[1]")
 	WebElement login;
 	@FindBy(xpath=".//*[@id='wrapper']/div[2]/ul/li[1]/div/div/div/div/a[2]")
@@ -48,6 +51,11 @@ public class Home {
 //		waitHelper.waitForElement(login, DataSource.getExplicitWait());
 		register.click();
 		return new Registration(driver);
+	}
+	//
+	public StoreLocator navigateToStoresLocator(){
+		storesLocator.click();
+		return new StoreLocator(driver);
 	}
 
 }
