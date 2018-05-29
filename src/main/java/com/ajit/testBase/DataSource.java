@@ -9,10 +9,11 @@ import org.apache.log4j.Logger;
 import com.ajit.utility.ResourceHelper;
 
 public class DataSource {
+//	static ResourceHelper resourceHelper = new ResourceHelper();
 	private static Logger log= Logger.getLogger(DataSource.class);
 	public static Properties OR;
 	
-	private String browserType;
+	private static String browserType;
 	
 
 	private String userName;
@@ -38,7 +39,7 @@ public class DataSource {
 	/**
 	 * @return the browserType
 	 */
-	public String getBrowserType() {
+	public static String getBrowserType() {
 		return browserType;
 	}
 	public String getUserName() {

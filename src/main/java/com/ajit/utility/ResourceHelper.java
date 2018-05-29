@@ -5,19 +5,23 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 import org.apache.log4j.Logger;
+import org.testng.annotations.Test;
 
+import com.ajit.helper.logger.LoggerHelper;
 import com.ajit.testBase.BaseTest;
 
 public class ResourceHelper {
-	private static Logger log = Logger.getLogger(ResourceHelper.class);
+//	private static Logger log = LoggerHelper.getLogger(ResourceHelper.class);
 	
 	public static String getResourcePath(String resource){
+		
 		String path = getBaseResourcePath()+"\\src\\main\\resources"+resource;
-		log.info("full path is: "+path);
+//		String path = "C:\\Users\\ajit_\\workspace\\GNC_PROJECT\\src\\main\\resources"+resource;
+//		log.info("full path is: "+path);
 		return path;
 	}
 
-	private static String getBaseResourcePath() {
+		public static String getBaseResourcePath() {
 		// uer.dir will give us project location
 		// C:\Users\ajit_\workspace\GNC_PROJECT
 		String path = System.getProperty("user.dir");
@@ -26,7 +30,13 @@ public class ResourceHelper {
 	}
 	
 	public static InputStream getResourcePathInputStream(String path) throws FileNotFoundException{
+//		ResourceHelper resourceHelper = new ResourceHelper();
 		return new FileInputStream(ResourceHelper.getResourcePath(path));
+	}
+	@Test
+	public void test1(){
+		String path = System.getProperty("user.dir");
+		System.out.println(path);
 	}
 
 }

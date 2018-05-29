@@ -1,6 +1,7 @@
 package com.ajit.testScripts.registration;
 
 import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -29,6 +30,10 @@ public class RegistrationTest extends BaseTest{
 		getApplicationURL(getData("url"));
 		home = new Home(driver);
 		registration = home.navigateToRegistration();
+	}
+	@AfterClass
+	public void closeBrowser(){
+		endBrowser();
 	}
 	
 	@Test(dataProvider="testData")

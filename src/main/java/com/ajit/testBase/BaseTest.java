@@ -13,6 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 
 import com.ajit.excel.tutorial.ReadDataFromExcelSheet;
+import com.ajit.helper.logger.LoggerHelper;
 import com.google.common.io.Files;
 
 import com.ajit.testBase.DataSource;
@@ -20,7 +21,8 @@ import com.ajit.utility.ResourceHelper;
 
 public class BaseTest {
 	protected WebDriver driver;
-	private static Logger log = Logger.getLogger(BaseTest.class);
+//	ResourceHelper resourceHelper = new ResourceHelper();
+	Logger log = LoggerHelper.getLogger(BaseTest.class);
 	
 	/**
 	 * This method will initiate the Webdriver
@@ -35,7 +37,7 @@ public class BaseTest {
 				System.setProperty("webdriver.firefox.driver", ResourceHelper.getResourcePath("\\drivers\\geckodriver.exe"));
 				driver = new FirefoxDriver();
 			}else if(browser.equalsIgnoreCase("chrome")){
-				System.setProperty("webdriver.chrome.driver", ResourceHelper.getResourcePath("\\drivers\\chromedriver.exe"));
+				System.setProperty("webdriver.chrome.driver", ResourceHelper.getResourcePath("\\drivers\\chromedriver.exe"));				
 				driver = new ChromeDriver();
 			}
 		}else if(System.getProperty("os.name").contains("Mac")){
@@ -58,7 +60,7 @@ public class BaseTest {
 	 * @return
 	 */
 	public String[][] getExcelData(String excelName, String sheetName){	
-		String excelLocation = ResourceHelper.getResourcePath("\\testData\\excel\\"+ excelName);
+		String excelLocation = ResourceHelper.getResourcePath("\\testData\\excel\\"+ excelName);		
 		return ReadDataFromExcelSheet.readExcelFiles(excelLocation, sheetName);		
 	}
 	/**
@@ -81,7 +83,6 @@ public class BaseTest {
 		try {
 			TakesScreenshot screenshot = ((TakesScreenshot)driver);
 			File sourceFile = screenshot.getScreenshotAs(OutputType.FILE);
-//			Calendar cal = new Calendar(); System.getProperty("user.dir")+
 			File destinationFile = new File(ResourceHelper.getResourcePath("\\screenshot\\"+imageName+".png"));
 			Files.copy(sourceFile, destinationFile);
 		} catch (Exception e) {
@@ -99,7 +100,7 @@ public class BaseTest {
 	
 	@BeforeTest
 	public void launchBrowser(){
-		getBrowser(getData("browserType"));//getData("browserType")
+		getBrowser(getData("browserType"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(DataSource.getImplicitWait(), TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(DataSource.getPageLoadTime(), TimeUnit.SECONDS);
@@ -109,5 +110,11 @@ public class BaseTest {
 		log.info("url is: "+url);
 		driver.get(url);
 	}
+	
+	public void endBrowser(){
+		log.info("Browser is closing....");
+		driver.quit();
+		log.info("Browser is closed.");
+		}
 
 }

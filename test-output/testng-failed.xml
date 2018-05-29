@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test name="Test(failed)">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Suite1]">
+  <test name="Login(failed)">
     <classes>
-      <class name="com.ajit.testScripts.storeLocator.StoresLocatorTest">
+      <class name="com.ajit.testScripts.login.LoginTest">
         <methods>
-          <include name="storesLocatorTest"/>
+          <include name="loginTest" invocation-numbers="2"/>
           <include name="beforeClass"/>
           <include name="launchBrowser"/>
         </methods>
-      </class> <!-- com.ajit.testScripts.storeLocator.StoresLocatorTest -->
+      </class> <!-- com.ajit.testScripts.login.LoginTest -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Login(failed) -->
+</suite> <!-- Failed suite [Suite1] -->

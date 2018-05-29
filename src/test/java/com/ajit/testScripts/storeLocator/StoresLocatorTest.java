@@ -1,5 +1,6 @@
 package com.ajit.testScripts.storeLocator;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -21,11 +22,21 @@ public class StoresLocatorTest extends BaseTest{
 		storeLocator = home.navigateToStoresLocator();
 	}
 	
+	
+	
+	
 	@Test
 	public void storesLocatorTest(){
 		
 		storeLocator.locateStores(getData("storeLocation"));
 		
 	}
+	
+	@AfterClass
+	public void closeBrowser(){
+		endBrowser();
+	}
+	
+	
 
 }
