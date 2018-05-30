@@ -22,23 +22,22 @@ public class LoginTest extends BaseTest{
 	Login login;
 	Home home;
 	Account account;
-	public LoginTest(){
-		
-		
-	}
-	@BeforeClass
-	public void beforeClass(){//DataSource.OR.getProperty("url")
-//		getApplicationURL(getData("url"));
-		getApplicationURL("http://www.gnc.com");
-		home = new Home(driver);
-		
-		login = home.navigateToLogin();
-	}
+	
 	@DataProvider(name="testData")
 	public Object[][] testData(){
 		String[][] data = getExcelData("data.xlsx", "TestData");
 		return data;
 	}
+	
+	@BeforeClass
+	public void beforeClass(){//DataSource.OR.getProperty("url")
+		getApplicationURL(getData("url"));
+//		getApplicationURL("http://www.gnc.com");
+		home = new Home(driver);
+		
+		login = home.navigateToLogin();
+	}
+	
 	
 	
 	
@@ -52,9 +51,6 @@ public class LoginTest extends BaseTest{
 		account = login.loginToApplication(userName, password);
 		login = account.clickOnLogoutButton();
 	}
-//	@AfterMethod
-//	public void closeBrowser(){
-//		endBrowser();
-//	}
+	
 
 }

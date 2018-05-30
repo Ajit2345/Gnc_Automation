@@ -32,11 +32,6 @@ public class StoresLocatorTest extends BaseTest{
 		
 	}
 	
-	@AfterClass
-	public void closeBrowser(){
-		endBrowser();
-	}
-	
 	
 
 }
