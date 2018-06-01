@@ -6,6 +6,7 @@
       <class name="com.ajit.testScripts.login.LoginTest">
         <methods>
           <include name="loginTest" invocation-numbers="2"/>
+          <include name="closeBrowser"/>
           <include name="beforeClass"/>
           <include name="launchBrowser"/>
         </methods>

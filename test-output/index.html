@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite1">
-              <span class="suite-name border-failed">Suite1</span>
+              <span class="suite-name border-skipped">Suite1</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
+                    <span class="method-stats">4 methods,  1 skipped,  3 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite1" class="hide-methods failed suite-Suite1"> (hide)</a> <!-- hide-methods failed suite-Suite1 -->
-                      <a href="#" panel-name="suite-Suite1" class="show-methods failed suite-Suite1"> (show)</a> <!-- show-methods failed suite-Suite1 -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite1" class="hide-methods skipped suite-Suite1"> (hide)</a> <!-- hide-methods skipped suite-Suite1 -->
+                      <a href="#" panel-name="suite-Suite1" class="show-methods skipped suite-Suite1"> (show)</a> <!-- show-methods skipped suite-Suite1 -->
                     </span>
-                    <div class="method-list-content failed suite-Suite1">
+                    <div class="method-list-content skipped suite-Suite1">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.ajit.testScripts.login.LoginTest" hash-for-method="loginTest(rimedasji2015@gmail.com, Rime0304love, Y)">loginTest(rimedasji2015@gmail.com, Rime0304love, Y)</a> <!-- method navigator-link -->
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.ajit.testScripts.login.LoginTest" hash-for-method="loginTest(rimedasji2015@gmail.com, Rime0304love, N)">loginTest(rimedasji2015@gmail.com, Rime0304love, N)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Suite1 -->
+                    </div> <!-- method-list-content skipped suite-Suite1 -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -141,37 +141,26 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite1" class="panel Suite1">
-          <div class="suite-Suite1-class-failed">
+          <div class="suite-Suite1-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">com.ajit.testScripts.login.LoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="loginTest(rimedasji2015@gmail.com, Rime0304love, Y)">
-                  </a> <!-- loginTest(rimedasji2015@gmail.com, Rime0304love, Y) -->
+                  <a name="loginTest(rimedasji2015@gmail.com, Rime0304love, N)">
+                  </a> <!-- loginTest(rimedasji2015@gmail.com, Rime0304love, N) -->
                   <span class="method-name">loginTest</span>
-                  <span class="parameters">(rimedasji2015@gmail.com, Rime0304love, Y)</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy11.toString(Unknown Source)
-	at java.lang.String.valueOf(String.java:2994)
-	at java.lang.StringBuilder.append(StringBuilder.java:131)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.toString(ExpectedConditions.java:306)
-	at java.lang.String.valueOf(String.java:2994)
-	at java.lang.StringBuilder.append(StringBuilder.java:131)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:227)
-	at com.ajit.helper.waitHelper.WaitHelper.waitForElement(WaitHelper.java:24)
-	at com.ajit.pageObject.account.Account.&lt;init&gt;(Account.java:38)
-	at com.ajit.pageObject.login.Login.loginToApplication(Login.java:49)
-	at com.ajit.testScripts.login.LoginTest.loginTest(LoginTest.java:52)
-... Removed 29 stack frames
+                  <span class="parameters">(rimedasji2015@gmail.com, Rime0304love, N)</span>
+                  <div class="stack-trace">org.testng.SkipException: Run mode for this set of data is marked N
+	at com.ajit.testScripts.login.LoginTest.loginTest(LoginTest.java:48)
+... Removed 25 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite1-class-failed -->
+          </div> <!-- suite-Suite1-class-skipped -->
           <div class="suite-Suite1-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -275,24 +264,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'loginTest')
 data.setCell(0, 2, 'com.ajit.testScripts.login.LoginTest')
-data.setCell(0, 3, 234110);
+data.setCell(0, 3, 11833);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'loginTest')
 data.setCell(1, 2, 'com.ajit.testScripts.login.LoginTest')
-data.setCell(1, 3, 16076);
+data.setCell(1, 3, 9021);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'loginTest')
-data.setCell(2, 2, 'com.ajit.testScripts.login.LoginTest')
-data.setCell(2, 3, 12136);
+data.setCell(2, 1, 'storesLocatorTest')
+data.setCell(2, 2, 'com.ajit.testScripts.storeLocator.StoresLocatorTest')
+data.setCell(2, 3, 5277);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'storesLocatorTest')
-data.setCell(3, 2, 'com.ajit.testScripts.storeLocator.StoresLocatorTest')
-data.setCell(3, 3, 8796);
+data.setCell(3, 1, 'loginTest')
+data.setCell(3, 2, 'com.ajit.testScripts.login.LoginTest')
+data.setCell(3, 3, 0);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 26 seconds</span>
               <div id="times-div-Suite1">
               </div> <!-- times-div-Suite1 -->
             </div> <!-- times-div -->
@@ -325,41 +314,43 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">9090 ms</span>
+                <span class="method-start">4747 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">storesLocatorTest</span>
-                <span class="method-start">33576 ms</span>
+                <span class="method-start">22489 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-class after">
+              <div class="configuration-test after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">42375 ms</span>
-              </div> <!-- configuration-class after -->
+                <span class="method-start">27771 ms</span>
+              </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.ajit.testScripts.login.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">launchBrowser</span>
-                <span class="method-start">44000 ms</span>
+                <span class="method-start">28964 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">49143 ms</span>
+                <span class="method-start">32130 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">loginTest(adas0304@gmail.com, Bluemoon123, Y)</span>
-                <span class="method-start">73686 ms</span>
+                <span class="method-start">49476 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginTest(ajit_das@outlook.com, SunShine289, Y)</span>
-                <span class="method-start">85824 ms</span>
+                <span class="method-start">61310 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">loginTest(rimedasji2015@gmail.com, Rime0304love, Y)</span>
-                <span class="method-start">101902 ms</span>
+                <span class="method-name">loginTest(rimedasji2015@gmail.com, Rime0304love, N)</span>
+                <span class="method-start">70331 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">70331 ms</span>
+              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
