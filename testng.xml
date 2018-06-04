@@ -5,10 +5,5 @@
     <classes>
       <class name="com.ajit.testScripts.storeLocator.StoresLocatorTest"/>
     </classes>
-  </test> <!-- Test -->
-  <test thread-count="5" name="Login">
-    <classes>
-      <class name="com.ajit.testScripts.login.LoginTest"/>
-    </classes>
-  </test> <!-- Test -->
+  </test> <!-- Test -->  
 </suite> <!-- Suite -->
